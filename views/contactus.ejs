@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/default-head-3css.ejs', {title: 'Contact Us', additionalStylesheet: '../stylesheets/contactus.css', domHandler: ''}) %>
+<body>
+    
+    <div class="Aimage-container">
+        <a href="/"><img class="avicologo avicologo-blue" src="Images\logos\logo avicoBlue.svg" alt="Avico logo dark blue"></a>
+    </div>
+
+    <div class="main-container">
+        <h2 class="title">Get in Touch with us</h2>
+        <h3 class="title">Want to get in touch? We'd love to hear from you</h3>
+        
+        <div class="account-box contact-us">
+
+            <form action="">
+                <input type="text" name="username" id="UsernameSignUp" placeholder="Name" required>
+                <input type="email" name="email" id="EmailSignUp" placeholder="Email" required>
+                <textarea name="" id="" cols="44" rows="11" placeholder="Comment" required></textarea>
+
+                <button type="submit" class="submit-btn" id="submitSignUp">Send Email</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="bottom-links black">
+        <a href="/"><img class="avicologo avicologo-black" 
+            src="Images/logos/logo avico.svg" 
+            alt="Avico logo dark"></a>
+        <p>&copy 2023</p>
+
+        <a href="/aboutus">About Us</a>
+        <a href="/contactus">Contact Us</a>
+        <a href="/#JoinLetter">Join News Letter</a>
+    </div>
+
+
+</body>
+</html>

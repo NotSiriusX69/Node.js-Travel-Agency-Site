@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/default-head.ejs', {title: 'Book Details', additionalStylesheet: '../stylesheets/book-details.css', domHandler: '../javascript/domHandler_bookDetails.js'}) %>
+<body>
+
+    <% if(isLoggedIn) { %>
+        <%- include('./partials/navbar-loggedin-darkblue.ejs') %>
+        <% }else{ %>
+        <%- include('./partials/navbar-darkblue.ejs') %>
+        <% } %>
+
+    <div class="outer-book-details-container">
+        <div class="details-container flight-details-container">
+
+            <div class="title-container">
+                <h2>Flight Details</h2>
+                <h3>Book your flight, hotel</h3>
+            </div>
+
+            <div class="outer booking-container">
+                <h3>Booking ID</h3>
+                <div class="inner booking-container">
+                    <p>Id will be generated on your account</p>
+                </div>
+            </div>
+
+            <div class="outer date-container">
+                <h3>Date</h3>
+                <div class="inner date-container">
+                    <img src="/Images\utility\calendar.png" alt="calendar">
+                    <p><%= flight.from_date.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) %> -
+                        <%= flight.to_date.toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' }) %></p>
+                </div>
+            </div>
+
+            <div class="outer travelers-container outer">
+                <h3>Travelers</h3>
+                <div class="inner travelers-container">
+                    <img src="/Images\utility\2persons.png" alt="perons-logo">
+                    <p><span id="Adults">1</span> Adults <span id="Children">0</span> Children <span id="Infants">0</span> Infants </p>
+                    <img src="/Images/utility/arrow.png" alt="arrow" class="arrow-img">
+                </div>
+                <div class="inner adjust-travelers-container" id="adjustContainer">
+                    <div class="text-container">
+                        <p><span id="adultsNb">1</span> Adults</p>
+                        <p><span id="childrenNb">0</span> Children</p>
+                        <p><span id="infantsNb">0</span> Infants</p>    
+                    </div>
+
+                    <div class="outer-buttons-container">
+                        <div class="buttons-container">
+                            <button class="add" id="addAdults">+</button>
+                            <button class="remove" id="removeAdults">-</button>
+                        </div>
+    
+                        <div class="buttons-container">
+                            <button class="add" id="addChildren">+</button>
+                            <button class="remove" id="removeChildren">-</button>
+                        </div>
+    
+                        <div class="buttons-container">
+                            <button class="add" id="addInfants">+</button>
+                            <button class="remove" id="removeInfants">-</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="outer">
+                <h3>Flight Ticket</h3>
+                <p id="flightId">Flight ID:<%= flight.flight_id %></p>
+                <div class="searched-flight-container">
+                    <img src= "<%= flight.path %>" alt="airline_logo">
+
+                    <div class="flight-time-container">
+                        <div class="flight-details departure-container">
+        
+                            <div class="time departure-container gone">
+                                <h3 id="hourDeparture"><%= flight.hour_departure %></h3>
+                                <p id="fromAirport"><%= flight.from_airport %></p>
+                            </div>
+                            <hr>
+                            <div class="time arrival-container gone">
+                                <h3 id="hourArrival"><%= flight.hour_arrival %></h3>
+                                <p id="toAirport"><%= flight.to_airport %></p>
+                            </div>
+                        </div>
+                        <div class="flight-details arrival-container">
+        
+                            <div class="time departure-container return">
+                                <h3 id="hourDepartureReturn"><%= flight.hour_departure_return %></h3>
+                                <p><%= flight.to_airport %></p>
+                            </div>
+                            <hr>
+                            <div class="time departure-container return">
+                                <h3 id="hourArrivalReturn"><%= flight.hour_arrival_return %></h3>
+                                <p><%= flight.from_airport %></p>
+                            </div>
+        
+                        </div>
+                    </div>
+                        <h3 id="ticketPrice">$<%=flight.ticket_price %></h3>
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="no-hotel-container" id="noBook">
+            <h3>No Hotel Booked</h3>
+            <button class="add-hotel-button" id="addHotel">Book Hotel</button>
+        </div>
+
+        <div class="details-container hotel-details-container" id="addHotelContainer">
+            <div class="title-container">
+                <h2>hotel Booking</h2>
+                <h3>Choose your hotel</h3>
+            </div>
+
+            <div class="inner choose-hotel-container">
+                <% if (hotels.length > 0) { %>
+                    <% hotels.forEach(hotel => { %>
+                        <div class="inner hotel-container">
+                            <h4 class="hotel-id" id="hotelId"><%= hotel.hotel_id %></h4>
+                            <h4 class="hotel-name"><%= hotel.hotel_name %></h4>
+                            <div class="stars-container">
+                                <% for (let i = 0 ; i < hotel.hotel_stars; i++) { %>
+                                <img src="/Images\utility\star.png" alt="starPNG">
+                                <% } %>
+                            </div>
+                            <div class="price-container">
+                                <p>Price per Night</p>
+                                <span id="Price">$<%= hotel.hotel_price_per_night %></span>
+                            </div>
+                        </div>
+
+                    <% }) %>
+                    <% } else { %>
+                    <p>There are no hotels to display...</p>
+                    <% } %>
+            </div>
+
+            <div class="outer chosen-hotel-container" id="chosenHotel">
+                <h3>Your Hotel</h3>
+                <div class="inner chosen-hotel-container" id="chosenHotel">
+                    <h4 id="chosenHotelId"></h4>
+                    <h4 id="chosenHotelName"></h4>
+                        <div class="stars-container" id="chosenHotelStars">
+                        </div>
+                        <div class="price-container">
+                            <p>Price per Night</p>
+                            <span id="chosenHotelPrice"></span>
+                        </div>
+                </div>
+                <button class="cancel" id="changeHotel">Change</button>
+            </div>
+
+        </div>
+
+     </div>
+
+        </div>
+
+        <div class="footer-container">
+            <div class="buttons-container">
+                <button class="cancel">Cancel</button>
+                <a href="/account"><button class="save" id="submitBtn">Save</button></a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bottom-links black">
+        <a href="/"><img class="avicologo avicologo-black" 
+            src="Images/logos/logo avico.svg" 
+            alt="Avico logo dark"></a>
+        <p>&copy 2023</p>
+
+        <a href="/aboutus">About Us</a>
+        <a href="/contactus">Contact Us</a>
+        <a href="/#JoinLetter">Join News Letter</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,212 @@
+/*!Global CSS*/
+h2{
+    font-size: 5vh;
+
+    align-self: start;
+
+    color: #191919;
+    margin: 0;
+
+    letter-spacing: normal;
+}
+
+p{
+    align-self: start;
+    color: #191919;
+}
+
+a{
+    color: #208AAE;
+    padding: 0;
+    font-weight: 500;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    margin-top: 35px;
+
+    position: relative;
+}
+form a{
+    align-self: flex-start;
+}
+
+button{
+    width: 340px;
+    height: 45px;   
+    border-radius: 20px;
+
+    padding: 10px;
+
+    font-family: Roboto;
+    font-size: 14px;
+}
+
+input[type="email"],input[type="password"],input[type="text"]{
+
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    background: #feffff;
+
+    width: 320px;
+    height: 30px;
+
+
+    outline: none;
+
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 500;
+
+}
+input[type="email"]:focus,input[type="password"]:focus,input[type="text"]:focus{
+    border: 2px solid #208AAE;
+}
+
+::placeholder{
+    color: rgba(0, 0, 0, 0.75);
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 300;
+
+}
+
+/*!Classes CSS*/
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+    .Aimage-container{
+        align-self: flex-start;
+        margin: 10px;
+    }
+
+    .account-box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        height: fit-content;
+        width: fit-content;
+
+        padding: 10px 20px;
+    
+        border-radius: 5px;
+
+        background: #FFF;
+        box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.25);
+    }   
+        .requirements-container{
+            align-self: flex-start;
+
+            width: max-content;
+            height: max-content;
+            margin-top: 2%;
+            padding: 0;
+
+            box-shadow: none;
+
+            display: none;
+        }
+            .requirements-container p{
+                text-align: left;
+                font-size: 12px;
+                font-weight: 300;
+                margin: 1vh 0;
+            }
+            .requirements-text-wrong{
+                display: none;
+                align-self: center;
+                font-size: 14px;
+                font-weight: 300;
+                margin: 1vh 0;
+                color: red;
+            }
+            .requirements-text-username{
+                display: none;
+                text-align: left;
+                font-size: 12px;
+                font-weight: 300;
+                margin: 1vh 0;
+                color: red;
+            }
+
+        .show-text{
+            color: #208AAE;
+            font-weight: 500;
+
+            cursor: pointer;
+            
+            position: absolute;
+            top: 39.9%;
+            right: 4%;
+
+            font-size: 14px;
+        }
+
+        .or-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;   
+            gap: 10px;
+        }
+            .or-container hr{
+                border: 1px solid #bcbcbc;
+
+                width: 16.46354vh;
+
+            }
+            .or-container p{
+                font-size: 16px;
+                font-weight: 300;
+                font-family: Roboto;
+            }
+
+        .google-button{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            
+            gap:80px;
+
+            padding: 0px 15px;
+            
+            background-color: #FFF;
+            color: #191919;
+            border: 1px solid #191919;
+
+            font-weight: 500;
+        }
+            .google-button img{
+                height: 25px;
+                width: 24.194px;
+            }
+            .google-button:hover{
+                background-color: #ececec;
+                border: 1px solid #191919;
+                color: #191919;
+                
+            }
+
+        .signup-text{
+            display: block;
+            align-self: center;
+            margin: 4vh;
+        }
+        
+        .bottom-links{
+            justify-content: center;
+        }

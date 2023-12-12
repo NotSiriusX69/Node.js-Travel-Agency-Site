@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/default-head.ejs', {title: 'Log In', additionalStylesheet: '../stylesheets/login-signup.css', domHandler: '../javascript/domHandler_Login.js'}) %>
+<body>
+    <div class="main-container">
+
+        <div class="Aimage-container">
+            <a href="/"><img class="avicologo avicologo-blue" src="Images\logos\logo avicoBlue.svg" alt="Avico logo dark blue"></a>
+        </div>
+
+        <div class="account-box sign-in">
+            <h2 class="title">Sign in</h2>
+            <p class="text">Please fill your credentials</p>
+
+            <form action="/login" method="post">
+                <input type="email" name="email" id="EmailLogIn" placeholder="Email" required>
+                <input type="password" name="password" id="PasswordLogIn" placeholder="Password" required>
+                <p class="requirements-text-wrong" id="WrongEmailPassword">Make sure your Password and Email are correct</p>
+                <span class="show-text" id="showPassLogIn">Show</span>
+                <a href="/forgetPassword">Forget Password?</a>
+                <button type="submit" class="submit-btn" id="submitLogIn">Sign in</button>
+
+                <div class="or-container">
+                    <hr>
+                    <p>or</p>
+                    <hr>
+                </div>
+
+                <button class="google-button" type="submit"><img src="Images\logos\google-logo.png" alt="">Login with Google</button>
+            </form>
+            
+        </div>
+        
+        <p class="signup-text">New to Avico? <a href="/signup">Join Now</a></p>
+
+        <div class="bottom-links black">
+            <a href="/"><img class="avicologo avicologo-black" 
+                src="/Images\logos\logo avico.svg" 
+                alt="Avico logo dark"></a>
+            <p>&copy 2023</p>
+
+            <a href="/aboutus">About Us</a>
+            <a href="/contactus">Contact Us</a>
+            <a href="/#JoinLetter">Join News Letter</a>
+        </div>
+    </div>
+</body>
+</html>

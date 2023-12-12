@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/default-head.ejs', {title: 'Account', additionalStylesheet: '../stylesheets/account.css', domHandler: '../javascript/domHandler_account.js'}) %>
+<body>
+
+    <%- include('./partials/navbar-loggedin-darkblue.ejs') %>
+
+    <main class="outer-container">
+
+        <div class="table-container" id="accountTable">
+            <h3 class="accountSettingsText">Account Settings</h3>
+            <h3 class="accountBookingsText">My Bookings</h3>
+            <h3 class="accountPaymentsText">Payment Management</h3>
+            <h3 class="accountSecurityText">Security</h3>
+        </div>
+
+        <div class="account-details account-settings" id="accountDetails">
+
+            <div class="title-container">
+                <h2>Account Details</h2>
+                <h3>Check Your account settings</h3>
+            </div>
+
+            <h4>Customer ID: <span id="userId"><%=user.user_id%></span></h4>
+            <p class="account-details-updated-text" id="updatedText">Account details Updated</p>
+            <p class="account-details-failed-text" id="failedText">Account details Failed to Update</p>
+
+                <form action="/account/update" method="post" class="account-details-form" id="accountForm ">
+                    <label for="">User Name</label>
+                    <input type="text" name="username" id="userName"  value="<%=user.username%>" >
+
+                    <label for="">First Name</label>
+                    <input type="text" name="firstname" id="firstName" placeholder="Type Your First name" value= <%=user.firstname%>>
+                    
+                    <label for="">Last Name</label>
+                    <input type="text" name="lastname" id="lastName" placeholder="Type Your Last name" value= <%=user.lastname%> >
+                    
+                    <label for="">Email</label>
+                    <input type="email" name="email" id="Email" value= <%=user.email%> >
+                    
+                    <button type="submit" id="updateDetails">Save Changes</button>
+                </form>
+                <a href="/logout"><button class="cancel">Logout</button></a>
+        </div>
+            
+            <div class="account-details bookings-details" id="bookingsDetails">
+                <div class="title-container">
+                    <h2>Your Bookings</h2>
+                    <h3>Check, Edit, Delete your bookings</h3>
+                </div>
+
+                <% if (bookings.length > 0) { %>
+                    <% bookings.forEach(booking => { %>
+                      <div class="booking-container" id="bookingContainer">
+                        <div class="details-container">
+                          <p>Booking ID: <span id="bookingIdText"><%= booking.booking_id %></span></p>
+                          <p>Hotel: <span><%= booking.hotel_name %></span></p>
+                  
+                          <% flights.forEach(flight => { %>
+                            <% if (booking.flight_id == flight.flight_id) { %>
+                              <p>From: <span><%= flight.from_location %></span></p>
+                              <p>To: <span><%= flight.to_location %></span></p>
+                            <% } %>
+                          <% }) %>
+                  
+                          <p>Date: <span> 1 Oct - 31 Dec </span></p>
+                        </div>
+                  
+                        <div class="buttons-container">
+                          <a href="/bookDetails/<%=booking.booking_id%>" data-id="<%= booking.booking_id %>" id="editDetails"><button>Edit</button></a>
+                          <button class="cancel" id="cancelBookingBtn">Cancel</button>
+                        </div>
+                      </div>
+                    <% }) %>
+                  <% } else { %>
+                    <p>There are no bookings to display...</p>
+                  <% } %>
+                
+            </div>
+
+            <div class="account-details payment-details" id="paymentDetails">
+                <div class="title-container">
+                    <h2>Payment Settings</h2>
+                    <h3>Check your payments</h3>
+                </div>
+
+                <h3>Payment Details</h3>
+                <form action="" class="account-details-form payments-form" >
+                    <input type="text" name="name" placeholder="Name On Card">
+                    <div class="card-number-container">
+                        <input type="text" name="cardnb" id="cardNumber"  placeholder="1234 1234 1234 1234"  >
+                        <input type="text" name="cvv" id="CVV" placeholder="CVV" class="small-input">
+                        <input type="text" name="expiry" id="Expiry" placeholder="Expiry" class="small-input">
+                    </div>
+                    <button type="submit">Save Changes</button>
+                </form>
+            </div>
+
+            <div class="account-details security-details" id="securityDetails">
+                <div class="title-container">
+                    <h2>Account Security</h2>
+                    <h3>Check your account security</h3>
+                </div>
+
+                <h4>Customer ID: <span id="user-id"><%=user.user_id%></span></h4>
+
+                <p class="password-updated">Password was succesfully updated</p>
+                <p class="password-failed">Password failed to update</p>
+                <p class="password-failed-same">Password must be different than the old one</p>
+
+                <form action="/account/update/password" method="post" class="account-details-form security-form">
+                    <label for="">Password</label>
+                    <input type="text" name="password" id="oldPassword" readonly value=<%=user.password %>>
+            
+                    <label for="">New Password</label>
+                    <input type="text" name="username" id="newPassword" placeholder="Type Your New Password" required>
+                    
+                    <div class="account-box requirements-container" id="requirementBox">
+                        <p class="requirements-text" id="8Chars">Must contain 8 characters</p>
+                        <p class="requirements-text" id="1Cap">Must contain at least 1 capital character</p>
+                        <p class="requirements-text" id="1Num">Must contain at least 1 number</p>
+                        <p class="requirements-text" id="1SpecialChar">Must contain at least 1 special character</p>
+                    </div>
+
+                    <button type="submit" id="submitPasswordDetails">Save Changes</button>
+                </form>
+            </div>
+
+    </main>
+</body>
+</html>

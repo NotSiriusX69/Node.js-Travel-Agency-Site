@@ -1,0 +1,418 @@
+h2{
+    font-size: 5.5vh;
+    color: #000;
+    margin: 0;
+}
+
+h3{
+    margin: 0;
+
+    color: #000;
+    font-family: Raleway;
+    font-size: 3.1vh;
+    font-weight: 500;
+    letter-spacing: 1.76px;
+}
+
+h4{
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1.44px;
+}
+
+hr{
+    width: 60%;
+}
+
+button{
+    width: 9.76vw;
+    font-size: 18px;
+}
+
+input[type="text"]::placeholder{
+    color: #000;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+
+}
+
+.outer-book-details-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10vh;
+
+    margin-top: 2%;
+}   
+    .outer-book-details-container span, p{
+        color: #000;
+        text-align: center;
+        font-family: Roboto;
+        font-size: 2.6vh;
+        font-weight: 400;
+        letter-spacing: 1.44px;
+    }
+    .outer-book-details-container img{
+        width: 2.4vw;
+        opacity: 0.8;
+
+        object-fit: contain;
+    }
+
+    .details-container{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        
+        width: 80%;
+        height: max-content;
+
+        padding: 2vw 2vh;
+
+        background: #FFF;
+        
+    }
+    .outer{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2vh;
+
+    }
+        .inner{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+
+            width: 70%;
+            height: 10.6vh;
+
+            padding-left: 1vw;
+            
+            border-radius: 15px;
+            background: #FFF;
+            box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.10);
+        }
+
+            .inner:hover{
+                background-color: #f4f4f4;
+            }
+
+            .inner.travelers-container{
+                justify-content: space-around;
+            }
+                .arrow-img{
+                    height: 50%;
+                    width: 50%;
+                    rotate: 90deg;
+                    cursor: pointer;
+                }
+
+
+        .inner.adjust-travelers-container{
+            display: none;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 2%;
+            width: 67%;
+
+            height: 120px;
+
+        }
+            .adjust-travelers-container .text-container{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                height: 100%;
+            }
+                .text-container p{
+                    align-self: flex-start;
+                }
+            
+            .outer-buttons-container{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                height: 100%;
+            }
+            .adjust-travelers-container .buttons-container{
+                display: flex;
+                flex-direction: row;
+                gap: 12%;
+            }
+                .adjust-travelers-container .buttons-container button{
+                    width: 50px;
+                    height: 100%;
+                }
+
+                .adjust-travelers-container .buttons-container .remove{
+                    background: #AE2020;
+                }
+                .adjust-travelers-container .buttons-container .remove:hover{
+                    background: #941b1b;
+                    border: 0;
+                    color: #FFF;
+                }
+
+        .searched-flight-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            
+            gap: 2vw;
+    
+            width: 90%;
+            height: 30vh;
+            padding: 4%;
+    
+            background: #FFF;
+            box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.10);
+    
+            border-radius: 10px;
+            
+        }
+            .searched-flight-container img{
+                width:100px;
+                height:100px;
+            }
+            .searched-flight-container h3{
+                font-size: 20px;
+                font-weight: 600;
+                font-family: Roboto;
+            }
+            .flight-time-container{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 8vh;
+    
+                width: 75%;
+            }
+                .flight-details{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+    
+                    width: 100%;
+                }
+                    .flight-details hr{
+                        width: 100%;
+                    }
+    
+                .time{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 2vh;
+    
+                    width: 100%;
+                    padding: 2%;
+                    
+                }
+    .no-hotel-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2vh;
+    }       
+            
+    .hotel-details-container{
+        display: none;
+    }
+        .inner.hotels-container button{
+            margin-right: 1vw;
+        }
+    
+    
+        .inner.choose-hotel-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            
+            height: 35.36vh;
+            padding: 2%;
+            width: 50vw;
+
+            overflow-x: auto;
+            overflow-y: hidden;
+            
+        }
+            .hotel-container, .inner.chosen-hotel-container{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+
+                background: #E8E8E8;
+
+                min-width: 18vw;
+                height: 30vh;
+
+                transition-duration: 100ms;
+            }
+                .hotel-container:hover{
+                    height: 95%;
+                    min-width: 55%;
+                    cursor: pointer;
+                }
+
+                .price-container{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+            .outer.chosen-hotel-container{
+                display: none;
+            }
+                .inner.inner.chosen-hotel-container{
+                    box-shadow: none;
+                    border-radius: 0;
+                }
+        
+
+    .footer-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        
+        width: 100%;
+        margin: 2vh;
+    }   
+        .footer-container span{
+            font-weight: 600;
+        }
+
+        /*Ids*/
+        #removeX{
+            font-family: Raleway;
+            font-size: 30px;
+            color: #941b1b;
+            font-weight: 700;
+            
+            align-self: flex-end;
+        }
+
+
+@media(max-width: 1100px){
+    button{
+        width: 100%;
+    }
+
+    .outer-book-details-container span{
+        display: inline;
+    }
+        .inner{
+            height: 8vh;
+        }
+        .inner p{
+            font-size: 1.8vw;
+        }
+        .inner p span{
+            font-size: 1.8vw;   
+        }
+
+    .searched-flight-container{
+        flex-direction: column;
+        gap: 1vh;
+
+        width: 100%;
+        height: 20%;
+        padding: 1% 0;
+    }
+        .flight-time-container{
+            align-items: center;
+
+            width: 100%;
+        }
+            .flight-details{
+                width: 80%;
+            }
+        .book-container{
+            gap: 10px;
+            width: 100%;
+        }
+        .book-container button{
+            width: 90%;
+        }
+
+        .inner.travelers-container{
+            justify-content: space-around;
+        }
+}
+
+@media(max-width: 740px){
+
+
+    .details-container{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        
+        width: 90%;
+        height: max-content;
+
+        padding: 2vw 2vh;
+
+        background: #FFF;
+        
+    }
+
+    .inner{
+        width: 95%;
+    }
+    .inner img{
+        width: 20px;
+    }
+    .inner p{
+        font-size: 3vw;
+    }
+    .inner p span{
+        font-size: 3vw;   
+    }
+
+    .details-container.hotel-details-container{
+        display: none;
+    }
+
+    .inner.choose-hotel-container{
+        flex-direction: column;
+
+        width: 90%;
+
+        overflow-y: scroll;
+    }
+        .inner.choose-hotel-container img{
+            width: 10%;
+        }
+            .hotel-container{
+                padding: 2%;
+            }
+            .hotel-container p{
+                font-size: 16px;
+            }
+
+    .footer-container .buttons-container{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        gap: 10px;
+    }
+}

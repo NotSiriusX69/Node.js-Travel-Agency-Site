@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/default-head.ejs', {title: 'About us', additionalStylesheet: '../stylesheets/aboutus.css', domHandler: '../javascript/domHandler_aboutus.js'}) %>
+
+<body>
+
+    <% if(isLoggedIn) { %>
+        <%- include('./partials/navbar-loggedin-blue.ejs') %>
+        <% }else{ %>
+        <%- include('./partials/navbar-blue.ejs') %>
+        <% } %>
+
+        <article class="main-article">
+            <section class="article-containers aboutus-container">
+                <div class="title-container">
+                    <h1>About Us</h1>
+                    <hr>
+                </div>
+
+                <p>Welcome to Avico, where every journey is a story. At Avico, we're more than a travel agency; we're your partners in exploration. Founded with a passion for seamless travel and a commitment to personalized service, Avico has become a trusted name in the industry. Our story is one of dedication, innovation, and a relentless pursuit of creating extraordinary travel experiences. Discover the essence of Avico as we redefine the way you explore the world. Join us on a journey where every destination becomes an adventure, and every traveler is a cherished part of our story.</p>
+            <div class="Aimage-container">
+                <img src="Images/Compnay.jpg" alt="company Image">
+            </div>
+            </section>
+            <section class="article-containers ourstory-container">
+                <div class="title-container">
+                    <h1>Our Story</h1>
+                    <hr>
+                </div>
+
+                <p>Avico's story is a journey of passion for travel and a commitment to creating exceptional experiences. Founded with a vision to redefine the way people explore the world, Avico has evolved into a trusted name in the travel industry. Our story is woven with a dedication to personalized service, a pursuit of excellence, and a love for crafting journeys that leave lasting memories. From our humble beginnings to becoming a go-to travel partner, Avico continues to write chapters of adventure, discovery, and the joy of seamless travel. Join us in the unfolding narrative of Avico, where every journey is a story waiting to be told.</p>
+            <div class="Aimage-container">
+                <img src="Images\Airplane.jpg" alt="company Image"> 
+            </div>
+            </section>
+            <section class="article-containers ourvision-container">
+                <div class="title-container">
+                    <h1>Our Vision</h1>
+                    <hr>
+                </div>
+
+                <p>At Avico, our vision is to inspire and empower a world of seamless and unforgettable travel experiences. We envision a global community of explorers who trust us to redefine their journeys, providing personalized service, innovative solutions, and a commitment to excellence. With a passion for discovery and a dedication to creating lasting memories, Avico strives to be the leading force in transforming travel dreams into reality. Our vision is grounded in the belief that every journey with Avico is a step towards a world where exploration knows no bounds.</p>
+            <div class="Aimage-container">
+                <img src="Images\Company.jpg" alt="company Image">
+            </div>
+            </section>
+
+        </article>
+
+        <%- include('./partials/lower-part-no-links.ejs') %>
+
+</body>
+</html>

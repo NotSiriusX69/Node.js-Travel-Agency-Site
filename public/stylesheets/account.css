@@ -1,0 +1,307 @@
+a:hover{
+    color: none;
+}
+
+h2,h3{
+    color: #000;
+    margin: 0;
+}
+
+h3{
+    color: #000;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 1.76px;
+}
+
+h4{
+    color: #000;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    background-color: #E4E4E4;
+
+    padding: 2%;
+}
+
+span{
+    color: #000;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+}
+
+label{
+    color: #000;
+    text-align: left;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.6px;
+}
+
+input[type="email"],input[type="password"],input[type="text"]{
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    background: #feffff;
+
+    width: 40vw;
+    height: 30px;
+
+    outline: none;
+
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 500;
+
+}
+input[type="email"]:focus,input[type="password"]:focus,input[type="text"]:focus{
+    border: 2px solid #208AAE;
+}
+
+::placeholder{
+    color: rgba(0, 0, 0, 0.75);
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 300;
+
+}
+
+
+/**Classes CSS*/
+.outer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    
+    gap: 20px;
+    
+    width: 85%;
+    margin: 2% auto;
+
+    background: none;
+}
+    .table-container{
+        display: flex;
+        flex-direction: column;
+        gap: 8vh;
+        
+        padding: 8vh 2.2vw;
+        width: 250px;
+
+        background: #FFF;
+        
+    }
+        .table-container h3{
+            color: rgba(25, 25, 25, 0.55);
+            font-family: Roboto;
+            font-size: 18px;
+            font-weight: 500;
+            text-align: left;
+
+            padding: 1vh 1vw;
+            margin: 0;
+        }
+        .table-container h3:hover{
+            background: #E4E4E4;
+            cursor: pointer;
+        }
+    
+    .account-details{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 7vh;
+
+        width: 120vw;
+        padding: 2%;
+
+        background: #FFF;
+        
+    }   
+        .accountSettingsText{
+            color: #000;
+            background: #E4E4E4;
+        }
+       
+            .account-details-updated-text{
+                font-size: 122%; 
+                display: none;
+                color: green;
+            }
+            .account-details-failed-text{
+                font-size: 122%; 
+                display: none;
+                color: red;
+            }
+            .password-updated{
+                font-size: 122%; 
+                display: none;
+                color: green;
+            }
+            .password-failed{
+                font-size: 122%; 
+                display: none;
+                color: red;
+            }
+            .password-failed-same{
+                font-size: 122%; 
+                display: none;
+                color: red;
+            }
+
+            .requirements-container{
+                align-self: flex-start;
+    
+                width: max-content;
+                height: max-content;
+                margin-top: 2%;
+                padding: 0;
+    
+                box-shadow: none;
+    
+                display: none;
+            }
+                .requirements-container p{
+                    text-align: left;
+                    font-size: 12px;
+                    font-weight: 300;
+                    margin: 1vh 0;
+                }
+
+        .title-container{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .account-details h2{
+            font-size: 5vh;
+        }
+
+        .account-details h3{
+            color: #000;
+            text-align: left;
+            font-family: Raleway;
+            font-size: 2vh;
+            font-weight: 500;
+        }
+
+        .account-details a{
+            width: 40%;
+        }
+        .account-details button{
+            width: 100%;
+        }
+
+        .account-details span{
+            display: inline;
+        }
+
+        .account-details-form{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+.account-details.bookings-details{
+    display: none;
+    width: 100%;
+}
+    .booking-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        width:100%;
+
+        background: #E8E8E8;
+    }
+
+        .details-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2vh;
+
+            width: 20vw;
+            padding: 2%;
+        }
+
+        .buttons-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            width: 140px;
+            padding: 2%;
+        }
+            .buttons-container a{
+                width: 100%;
+            }
+    
+    .payment-details{
+        display: none;
+        gap: 4vh;
+    }
+        .payments-details-form{
+            display: flex;
+            flex-direction: column;
+            gap: 3vh;
+        }
+
+            .card-number-container{
+                display: flex;
+                flex-direction: column;
+                gap: 2vh;
+            }
+    .security-details{
+        display: none;
+    }
+
+
+#accountSettingsText{
+    color:#000;
+    background: #E4E4E4;
+}
+
+
+@media (max-width: 700px) {
+    .booking-container{
+        flex-direction: column;
+    }
+        .booking-container .details-container{
+            width: 100%;
+        }
+            .booking-container .details-container p{
+                font-size: 3vh;
+            }
+            .booking-container .details-container span{
+                font-size: 2.4vh;
+            }
+            
+        .booking-container .buttons-container {
+            width: 100%;
+        }
+        .booking-container a{
+            text-align: center;
+            width: 100%;
+        }
+            .booking-container .buttons-container button{
+                width: 90%;
+            }
+}

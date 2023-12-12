@@ -1,0 +1,424 @@
+/*!Global CSS*/
+h2{
+    font-size: 4.60vh;
+    margin: 0;
+}
+p{
+    font-family: 'Roboto';
+    color: #191919;
+    text-align: center;
+    font-size: 2.6vh;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/*!Classes CSS*/
+.main{
+    display: flex;
+    flex-direction: column;
+
+    width: 100vw;
+    height: 100vh;
+}
+    .front-page{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        width: 100vw;
+        height: 100vh;
+
+        background: url('../Images/airplaneBackground.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        
+        text-align: center;
+
+        margin: 0;
+        
+    }
+        .slogan{
+            margin-top: 10%;
+            margin-bottom: 7%;
+        }
+
+            .booking-container{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            
+                width: fit-content;
+                margin: 0 auto;
+                margin-bottom: 10px;
+            }
+                .booking-container h2{
+                    align-self: flex-start;
+                    margin-bottom: 5px;
+                }
+    .book-now-small{
+        display:none;
+    }
+
+    .bestflights-page{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        padding-top: 4vh;
+
+        background-color: #0D2149;
+    }
+        .bestflights-page p{
+            color: #FFF;
+            font-family: Roboto;
+            font-size: 2.25vh;
+            font-weight: 300;
+            
+        }
+
+        .flights-container{
+            display: flex;
+            flex-direction: row;
+            gap: 2.2vw;
+
+            margin: 20px;
+        }    
+            .flight-container{                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 27.34375vw;
+                height: 60.431654676258994vh;
+
+                border-radius: 15px;
+
+                box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.25);
+
+                transition-duration: 150ms;
+
+            }
+    
+                .flight-container span{
+                    text-align: center;
+                    font-family: 'Roboto';
+                    font-size: 1.3vw;
+                    font-weight: 300;
+                    color: #FFF;
+                    
+                }
+                .flight-container a{
+                    font-family: 'Raleway';
+                    font-size: 5.8vw;
+                    font-weight: 600;
+                    color: #FFF;
+
+                    text-align: center;
+                    opacity: 0;
+                    padding: 80px;
+                }  
+                .flight-container a:hover{
+                    opacity: 1;
+                }
+
+                .flight-container.istanbul{
+                    background: url('../Images/istanbul.jpg'), lightgray 50% / cover no-repeat;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                   
+                }
+                .flight-container.rome{
+                    background: url('../Images/rome.jpg'), lightgray 50% / cover no-repeat;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                }
+                .flight-container.paris{
+                    background: url('../Images/paris1.jpg'), lightgray 50% / cover no-repeat;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                }
+
+
+    .oursponsors-page{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 5px;
+        
+    }
+        .oursponsors-page h2{
+            color: #0D2149;
+            font-weight: 600;
+        }
+        .oursponsors-page img{
+            object-fit: contain;
+            width: 12vw;
+            height: 200px;
+        }
+        .oursponsors-page p{
+            font-size: 2vh;
+            margin-top: 1vh;
+        }
+
+            .sponsors-container{
+                display: flex;
+                flex-direction: row;
+                gap: 5vw;
+                margin-top: 1vh;
+            }
+
+        /*Shape css*/
+        .triangle-top {
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .triangle-top svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 300px;
+        }
+        
+        .triangle-top .shape-fill {
+            fill: #0D2149;
+        }
+    
+    .questions-page{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        padding: 4vw 2vh;
+        
+    }   
+        .main-header{
+            margin-top: 5vh;
+
+            color: #000;
+        }
+ 
+        .questions-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+
+            margin: 5vh 12px;
+            
+        }
+            .question-container{
+                display: flex;
+                flex-direction: column;
+                width: 82vw;
+                
+            }
+                .question-title{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                    .question-title h2{
+                        color: #000;
+                        text-align: center;
+                        font-size: 3.4vh;
+                        font-weight: 600;
+                        letter-spacing: 1.36px;
+                    }
+                    .question-title span{
+                        display: block;
+                        
+                        font-size: 45px;
+                        font-weight: 500;
+                        color: #208AAE;
+                        cursor: pointer;
+
+                        transition-duration: 150ms;
+                    }
+
+                    .answer-container{
+                        display: none;
+                    }
+                        .answer-container p{
+                            font-size: 3.1vh;
+                            font-weight: 300;
+                            text-align: left;
+                            letter-spacing: 0.8px;
+
+                            margin: 2.2vh 0px;
+                        }
+
+                    .moveable-hrline{
+                        width: 100%;
+                        border: 0.2px solid rgb(120, 120, 120);
+                    }
+
+
+    .footer-page{
+        display: flex;
+        flex-direction: column;
+
+        background-color:#191919;
+    }
+        .join-our-newsletter-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+
+            height: 50.43vh;
+            width: 100%;
+            padding: 2%;
+
+            background-color: #7E6C6C;
+        }
+            .join-our-newsletter-container h2{
+                color: #FFF;
+                font-size: 3.26vh;
+            }
+            .join-our-newsletter-container p{
+                color: #FFF;
+                font-weight: 300;
+                font-size: 1.26vh;
+                letter-spacing: 0.64px;
+            }
+            .join-our-newsletter-container a{
+                color: #FFF;
+                font-weight: 400;
+                font-size: 1.26vh;
+                text-decoration: underline;
+
+                padding: 0;
+            }
+            .join-our-newsletter-container a:hover{
+                text-decoration: none;
+            }
+
+                .inner-container{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+
+                    width: 30%;
+                    height: 42vh;
+
+                    padding: 3vh 4.6vw;
+
+                    background-color: #FFF;
+                    box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.25);
+                }
+                    .inner-container input[type="email"]{
+                        width: 100%;
+                    }
+                    .inner-container input[type="email"]::placeholder{
+                        color: rgba(0, 0, 0, 0.75);
+                        font-weight: 300;
+                    }
+                    .inner-container button{
+                        border-radius: 20px;
+
+                        height: 5vh;
+                        width: 100%;
+                        padding: 5px;
+
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10px;
+                    }
+
+        .links-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            background: none;
+        }
+            .links-container{
+                color: #FFF;
+                font-family: Roboto;
+                padding: 2vh 2vw;
+            }
+                .links-container ul{
+                    padding: 3vw;
+                }
+                .links-container li{
+                    padding: 0.6vh;
+                    font-weight: 300;
+                    font-size: 1.04vw;
+                }
+                .links-container h4{
+                    color: #FFF;
+                    text-align: center;
+                    font-family: Raleway;
+                    font-size: 1.43vw;
+                    font-weight: 600;
+                    letter-spacing: 0.88px;
+
+                    padding-bottom: 12px;
+                }
+        
+        .socials-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-self: flex-end;
+
+            background: none;
+            margin: 1vw 4vh;
+        }
+            .socials-container img{
+                width: 22px;
+                height: 22px;
+            }
+            .socials-container h4{
+                color: #FFF;
+                text-align: center;
+                font-family: Raleway;
+                font-size: 1.43vw;
+                font-weight: 500;
+                letter-spacing: 0.88px;
+
+                padding: 5px 0px;
+            }
+                .socials-links{
+                    display: flex;
+                    flex-direction: row;
+
+                    background: none;
+                }
+
+@media(max-width: 900px){
+
+    h1{
+        font-size: 26px;
+    }
+
+    h2{
+        font-size: 24px;
+    }
+
+    p{
+        font-size: 22px;
+    }
+
+    .button-link-small{
+        width: fit-content;
+    }
+
+    .book-now-small{
+        display: block;
+        width: 300px;
+    }
+}

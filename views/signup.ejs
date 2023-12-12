@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/default-head.ejs', {title: 'Sign Up', additionalStylesheet: '../stylesheets/login-signup.css', domHandler: '../javascript/domHandler_Signup.js'}) %>
+<body>
+    <div class="main-container">
+
+        <div class="Aimage-container">
+            <a href="/"><img class="avicologo avicologo-blue" src="Images\logos\logo avicoBlue.svg" alt="Avico logo dark blue"></a>
+        </div>
+
+        <div class="account-box sign-up">
+            <h2 class="title">Sign Up</h2>
+            <p class="text">Please fill your credentials</p>
+
+            <form action="/signup" method="post">
+                <input type="text" name="username" id="UsernameSignUp" placeholder="Username" required>
+                <p class="requirements-text-username" id="8CharsUserName">Username Must contain at least 8 characters</p>
+                <input type="email" name="email" id="EmailSignUp" placeholder="Email" required>
+                <input type="password" name="password"  id="PasswordSignUp" placeholder="Password" required>
+                <span class="show-text" id="showPassSignUp">Show</span>
+                
+                <div class="account-box requirements-container" id="requirementBox">
+                    <p class="requirements-text" id="8Chars">Must contain 8 characters</p>
+                    <p class="requirements-text" id="1Cap">Must contain at least 1 capital character</p>
+                    <p class="requirements-text" id="1Num">Must contain at least 1 number</p>
+                    <p class="requirements-text" id="1SpecialChar">Must contain at least 1 special character</p>
+                </div>
+
+                <p class="requirements-text-wrong" id="wrongEmail">This Email belongs to other account</p>
+
+                <a href="/forgetPass">Forget Password?</a>
+                <button type="submit" class="submit-btn" id="submitSignUp">Sign up</button>
+
+                <div class="or-container">
+                    <hr>
+                    <p>or</p>
+                    <hr>
+                </div>
+
+                <button class="google-button" type="submit"><img src="Images\logos\google-logo.png" alt="">Sign up with Google</button>
+            </form>
+        </div>
+        
+        <p class="signup-text">Already have an account? <a href="/login">Sign in instead</a></p>
+
+        <div class="bottom-links black">
+            <a href="/"><img class="avicologo avicologo-black" 
+                src="Images\logos\logo avico.svg" 
+                alt="Avico logo dark"></a>
+            <p>&copy 2023</p>
+
+            <a href="/aboutus">About Us</a>
+            <a href="/contactus">Contact Us</a>
+            <a href="/#JoinLetter">Join News Letter</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/default-head.ejs', {title: 'Main Page', additionalStylesheet: '../stylesheets/main.css', domHandler: '../javascript/domHandler_main.js'}) %>
+<body>
+
+    <% if(isLoggedIn) { %>
+    <%- include('./partials/navbar-loggedin.ejs') %>
+    <% }else{ %>
+    <%- include('./partials/navbar.ejs') %>
+    <% } %>
+
+    <section class="front-page">
+        <h1 class="slogan">Where your <br> dream flies</h1>
+
+        <div class="booking-container">
+            <h2>Book Your flight Today</h2>
+            <form class="outer-container" action="/submitSearch" method="">
+                <div class="fromlocation-container">
+                    <img src="Images\utility\location.png" alt="location icon">
+                    <input type="text" name="from-location" id="fromLocation" placeholder="From?" required> 
+                </div>
+
+                <div class="tolocation-container">
+                    <img src="Images\utility\location.png" alt="location icon">
+                <input type="text" name="to-location" id="toLocation" placeholder="To?" required>
+                </div>
+                <div class="date-container">
+                    <input class="date-picker" type="date" name="from-date" id="fromDate" required>
+                    <input class="date-picker" type="date" name="to-date" id="toDate" required>
+                </div>
+                
+                <a href="/bookFlight"><button id="searchBtn">Search</button></a>
+            </form>
+
+            <a href="/bookFlight" class="button-link-small"><button class="book-now-small">Book Now</button></a>
+        </div>
+    </section>
+
+<section class="bestflights-page">
+    <h2>Best Flights</h2>
+    <p>Top picks from our clients this month</p>
+
+    <div class="flights-container">
+        <div class="flight-container istanbul">
+            <a href="">Istanbul <br>
+                <span>Click for more details</span></a>
+        </div>
+
+       <div class="flight-container rome">
+            <a href="">Rome <br>
+                <span>Click for more details</span></a>
+       </div>
+
+        <div class="flight-container paris">
+            <a href="">Paris <br>
+                <span>Click for more details</span></a>
+        </div>
+    </div>
+
+    <p>hover over images for more details</p>
+</section>
+
+<section class="oursponsors-page">
+    <div class="triangle-top">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
+        </svg>
+    </div>
+
+    <h2>Our Sponsors</h2>
+    <div class="sponsors-container" id="OurSponsors">
+        <img src="/Images\airlines\turkish_airlines_logo.jpg" alt="">
+        <img src="/Images\airlines\Air_France_Logo.png" alt="">
+        <img src="/Images\airlines\Emirates_Logo.png" alt="">
+        <img src="/Images\airlines\Qatar_Airlines_logo.png" alt="">
+        <img src="/Images\airlines\Pegasus_Airlines_logo.png" alt="">
+    </div>
+    <p>Explore the world with confidence, 
+        thanks to the support of our trusted <br> sponsors 
+        who make extraordinary journeys possible.</p>
+</section>
+
+<section class="questions-page">
+    <h2 class="main-header">Frequently asked Questions</h2>
+    <div class="questions-container">
+        <div class="question-container">
+            <div class="question-title">
+                <h2>What is Avico?</h2>
+                <span class="OpenClose">+</span>
+            </div>
+
+            <div class="answer-container" id="answerContainer">
+                <p>Avico is a premier travel agency that specializes in providing a wide range of travel services to meet the diverse needs of our customers. As a trusted name in the industry, Avico offers seamless booking experiences for flights, accommodations, and vacation packages. Our commitment to excellence is reflected in our dedication to personalized service, ensuring that each traveler receives the attention and assistance they deserve. With a focus on creating memorable journeys, Avico stands as a reliable partner for individuals and groups seeking hassle-free and enjoyable travel experiences.</p>
+            </div>
+            <hr class="moveable-hrline">
+        </div>
+
+        <div class="question-container">
+            <div class="question-title">
+                <h2>Are there any current promotions or discounts available?</h2>
+                <span class="OpenClose">+</span>
+            </div>
+
+            <div class="answer-container" id="answerContainer">
+                <p>Absolutely! Avico is delighted to offer various promotions and discounts to enhance your travel experience. To find the latest deals, simply visit our "Special Offers" page on the website. We regularly update it with exciting promotions, seasonal discounts, and exclusive offers to make your journey even more enjoyable.</p>
+            </div>
+            <hr class="moveable-hrline">
+        </div>
+
+        <div class="question-container">
+            <div class="question-title">
+                <h2>What sets Avico apart from other travel agencies?</h2>
+                <span class="OpenClose">+</span>
+            </div>
+
+            <div class="answer-container" id="answerContainer">
+                <p>Avico takes pride in being more than just a travel agency; we're your travel partner committed to creating unforgettable experiences. What sets us apart is our dedication to personalized service, attention to detail, and a wide range of travel options tailored to your preferences. From exclusive destinations to seamless booking processes, Avico ensures that every journey with us is exceptional.</p>
+            </div>
+            <hr class="moveable-hrline">
+        </div>
+
+        <div class="question-container">
+            <div class="question-title">
+                <h2>Can I modify or cancel my booking after it's confirmed?</h2>
+                <span class="OpenClose">+</span>
+            </div>
+
+            <div class="answer-container" id="answerContainer">
+                <p>Certainly! At Avico, we understand that plans can change. Depending on the type of booking and the specific conditions, you may have the flexibility to modify or cancel your reservation. We recommend checking the terms and conditions associated with your booking or contacting our customer support team for assistance. Our goal is to provide you with the flexibility and support you need for a stress-free travel experience.</p>
+            </div>
+            <hr class="moveable-hrline">
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer-page">
+    <div class="join-our-newsletter-container" id="JoinLetter">
+        <h2>Join Our News Letter</h2>
+            <form action="get" class="inner-container">
+                <input type="email" name="email_news" id="emailNews" placeholder="Enter Your Email">
+                <button type="submit" >Join Now</button>
+            </form>
+        <p>Having issues? <a href="">Contact us</a></p>
+    </div>
+
+    <div class="socials-container">
+        <h4>Our Socials</h4>
+        <div class="socials-links">
+            <a href="https://facebook.com" target="_blank"><img src="Images\logos\Facebook_Logo_Primary.png" alt="facebook logo"></a>
+            <a href="https://x.com" target="_blank"><img src="Images\logos\twitter.png" alt="X logo"></a>
+            <a href="https://instagram.com" target="_blank"><img src="Images\logos\instagram.png" alt="instagram logo"></a>
+        </div>
+    </div>
+
+    <%- include('./partials/lower-part.ejs') %>
+</body>
+
+</html>

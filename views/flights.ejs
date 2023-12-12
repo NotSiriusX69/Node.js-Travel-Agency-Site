@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/default-head.ejs', {title: 'Flights', additionalStylesheet: '../stylesheets/flights.css', domHandler: '../javascript/domHandler_flights.js'}) %>
+<body>
+
+    <% if(isLoggedIn) { %>
+        <%- include('./partials/navbar-loggedin-darkblue.ejs') %>
+        <% }else{ %>
+        <%- include('./partials/navbar-darkblue.ejs') %>
+        <% } %>
+
+    <div class="booking-container"> 
+        <form action="/bookFlight/filter" method="post" class="outer-container">
+
+            <div class="fromlocation-container">
+                <img src="/Images\utility\location.png" alt="location icon">
+                <input type="text" name="from_location" id="fromLocation" placeholder="From?" required> 
+            </div>
+
+            <div class="tolocation-container">
+                <img src="/Images\utility\location.png" alt="location icon">
+               <input type="text" name="to_location" id="toLocation" placeholder="To?" required>
+            </div>
+            <div class="date-container">
+                <input class="date-picker" type="date" name="from_date" id="fromDate" required>
+                <input class="date-picker" type="date" name="to_date" id="toDate" required>
+            </div>
+
+            <button type="submit" id="searchBtn">Search</button>
+        </form>
+
+        <form action="/bookFlight/filter" method="post" class="outer-container-small">
+
+            <div class="fromlocation-container">
+                <img src="/Images\utility\location.png" alt="location icon">
+                <input type="text" name="from_location" id="fromLocation" placeholder="From?" required> 
+            </div>
+
+            <div class="tolocation-container">
+                <img src="/Images\utility\location.png" alt="location icon">
+               <input type="text" name="to_location" id="toLocation" placeholder="To?">
+            </div>
+                <input class="date-picker" type="date" name="from_date" id="fromDate">
+                <input class="date-picker" type="date" name="to_date" id="toDate">
+
+            <button type="submit" id="searchBtn">Search</button>
+        </form>
+
+        <form action="/bookFlight/filter" method="post" class="outer-container-smallest" id="smallestContainer">
+            <div class="fromlocation-container">
+                <img src="/Images\utility\location.png" alt="location icon">
+                <input type="text" name="from_location" id="fromLocation" placeholder="From?" required> 
+            </div>
+            <div class="tolocation-container">
+                <img src="/Images\utility\location.png" alt="location icon">
+               <input type="text" name="to_location" id="toLocation" placeholder="To?" required>
+            </div>
+                <input class="date-picker" type="date" name="from_date" id="fromDate" required>
+                <input class="date-picker" type="date" name="to_date" id="toDate" required>
+
+            <button type="submit" id="searchBtn">Search</button>
+            <button class="cancel" id="cancelDetails">Cancel</button>
+        </form>
+
+        <button class="edit-details-btn" id="editDetails">Edit Details</button>
+
+        <div class="outer-flights-container">
+            
+            <% if (flights.length > 0) { %>
+                <% flights.forEach(flight => { %>
+                    <div class="searched-flight-container">
+    
+                        <img src= <%= flight.path %> alt="airline_logo">
+            
+                        <div class="flight-time-container">
+                            <div class="flight-details departure-container">
+            
+                                <div class="time departure-container gone">
+                                    <h3 id="hourDeparture"><%= flight.hour_departure %></h3>
+                                    <p id="fromAirport"><%= flight.from_airport %></p>
+                                </div>
+                                <hr>
+                                <div class="time arrival-container gone">
+                                    <h3 id="hourArrival"><%= flight.hour_arrival %></h3>
+                                    <p id="toAirport"><%= flight.to_airport %></p>
+                                </div>
+                            </div>
+                            <div class="flight-details arrival-container">
+            
+                                <div class="time departure-container return">
+                                    <h3 id="hourDepartureReturn"><%= flight.hour_departure_return %></h3>
+                                    <p><%= flight.to_airport %></p>
+                                </div>
+                                <hr>
+                                <div class="time departure-container return">
+                                    <h3 id="hourArrivalReturn"><%= flight.hour_arrival_return %></h3>
+                                    <p><%= flight.from_airport %></p>
+                                </div>
+            
+                            </div>
+                        </div>
+                        <div class="book-container">
+                           <a href="/bookDetails/<%=flight.flight_id%>" id="bookFlightBtn" data-id="<%= flight.flight_id %>" ><button>Book</button></a> 
+                            <h3>$<%=flight.ticket_price %></h3>
+                        </div>
+                    </div>
+
+                <% }) %>
+                <% } else { %>
+                <p>There are no flights to display...</p>
+                <% } %>
+        </div>   
+
+</body>
+</html>

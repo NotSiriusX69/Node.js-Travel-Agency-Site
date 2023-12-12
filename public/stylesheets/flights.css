@@ -1,0 +1,259 @@
+input[type="text"], input[type="date"]{
+    width: 15.43vw;
+    height: 5.15vh;
+}
+
+img{
+    width: 100px;
+}
+
+h3{
+    font-family: Roboto;
+    font-size: 18px;
+    margin: 0;
+}
+
+p{
+    font-size: 14px;
+}
+
+hr{
+    width: 60%;
+}
+
+.outer-container-small{
+    display: none;
+}
+
+.outer-container{
+    width: 100%;
+    height: 80px;
+    border-radius: 0;
+
+    margin-bottom: 2%;
+}
+    .outer-container button{
+        height: 10vh;
+    }
+
+    .fromlocation-container{
+        width: 15.43vw;
+        height: 5.15vh;
+
+    }
+        .fromlocation-container img{
+            width: 30px;
+            height: 25px;
+            opacity: 75%;
+        }
+
+    .tolocation-container{
+
+        width: 15.43vw;
+        height: 5.15vh;
+
+        padding:10px;
+
+    }
+        .tolocation-container img{
+            width: 30px;
+            height: 25px;
+            opacity: 75%;
+        }
+
+
+.outer-flights-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4vh;
+    
+    margin: auto;
+    padding: 2vh;
+    width: 80%;
+}
+    .searched-flight-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        
+        gap: 2vw;
+
+        width: 100%;
+        height: 40vh;
+        padding: 2%;
+
+        background: #FFF;
+        box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.10);
+
+        border-radius: 10px;
+        
+    }
+        .flight-time-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8vh;
+
+            width: 75%;
+        }
+            .flight-details{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                width: 100%;
+            }
+                .flight-details hr{
+                    width: 100%;
+                }
+
+            .time{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2vh;
+
+                width: 100%;
+                padding: 2%;
+                
+            }
+                .book-container{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1vh;
+                }
+
+                
+    .outer-container-smallest{
+        display: none;
+    }
+
+.cancel{
+    background: #AE2020;
+}
+.cancel:hover{
+    background: #941b1b;
+    border: 0;
+    color: #FFF;
+}
+
+.edit-details-btn{
+    display: none;
+}
+
+@media(max-width: 1300px){
+    
+    .booking-container{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .outer-container-small{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 3vh;
+
+        padding: 2%;
+        width: max-content;
+        height: 100vh;
+
+        background: #7E6C6C;
+    }
+    .outer-container-small input[type="date"]{
+        width: 100%;
+        height: 5.15vh;
+    }
+    .fromlocation-container, .tolocation-container{
+        width: 100%;
+    }
+    .outer-container-small button{
+        width: 100%;
+    }
+    .outer-container{
+        display: none;
+    }
+
+    .outer-flights-container{
+        margin-top: 0;
+    }
+
+
+    .searched-flight-container{
+        flex-direction: column;
+        gap: 2vh;
+        height: 20%;
+        padding: 2% 0;
+    }
+        .flight-time-container{
+            align-items: center;
+            width: 100%;
+        }
+            .flight-details{
+                width: 80%;
+            }
+        .book-container{
+            gap: 10px;
+            width: 100%;
+        }
+        .book-container button{
+            width: 90%;
+        }
+    .outer-container-smallest{
+        display: none;
+    }
+
+
+}
+
+
+@media(max-width: 590px){
+    .booking-container{
+        margin-top: 2%;
+        flex-direction: column;
+        align-items: center;
+    }
+        .edit-details-btn{
+            display: block;
+        }
+
+    .outer-container-small{
+        display: none;
+    }
+
+    .outer-container-smallest{
+        display: none;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        background-color: #7E6C6C;
+        box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.10);
+
+        width: 80%;
+        height: 75%;
+    }
+        .outer-container-smallest input[type="text"],input[type="date"], button{
+            width: 85%;
+        }
+        .outer-container-smallest .fromlocation-container{
+            width: 85%;
+        }
+        .outer-container-smallest .tolocation-container{
+            width: 85%;
+        }
+
+}
