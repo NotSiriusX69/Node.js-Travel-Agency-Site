@@ -11,7 +11,7 @@ const flightRoutes = require('./routes/flightRoutes');
 
 const app = express();
 
-const dbURI = 'mongodb+srv://NotSiriusX:Abbas100@avicodata.8rkepcx.mongodb.net/AvicoDatabase?retryWrites=true&w=majority';
+const dbURI = '';
 mongoose.connect(dbURI)
     .then((result) => {app.listen(3000) 
         console.log('connection established')}) // listen for req after connection is established
